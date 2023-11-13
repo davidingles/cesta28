@@ -6,9 +6,9 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Dav(props) {
-  const { nodes, materials } = useGLTF("/3D CESTA 29.gltf");
+  const { nodes, materials } = useGLTF("/todas la cajas.gltf");
   return (
-    <group {...props} dispose={null} scale={.7} position={[0, 0, 0]}>
+    <group {...props} dispose={null} scale={.61} position={[0, 0, 0]}>
       <mesh
         castShadow
         receiveShadow
@@ -26,6 +26,42 @@ export function Dav(props) {
         receiveShadow
         geometry={nodes["TQ_ARD-geom_2"].geometry}
         material={materials.TQ_ARD_edge}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes["TQ_ARD_D2-geom"].geometry}
+        material={materials.TQ_ARD_D2_front}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes["TQ_ARD_D2-geom_1"].geometry}
+        material={materials.TQ_ARD_D2_back}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes["TQ_ARD_D2-geom_2"].geometry}
+        material={materials.TQ_ARD_D2_edge}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes["TQ_ARD-geom001"].geometry}
+        material={materials["TQ_ARD_front.001"]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes["TQ_ARD-geom001_1"].geometry}
+        material={materials["TQ_ARD_back.001"]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes["TQ_ARD-geom001_2"].geometry}
+        material={materials["TQ_ARD_edge.001"]}
       />
     </group>
   );
